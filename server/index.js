@@ -9,6 +9,7 @@ import dotenv from 'dotenv';
 import authRoutes from './routes/auth.js';
 import storageRoutes from './routes/storage.js';
 import dataRoutes from './routes/data.js';
+import functionsRoutes from './routes/functions.js';
 
 dotenv.config();
 
@@ -132,6 +133,7 @@ app.get('/health', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/storage', storageRoutes);
 app.use('/api/data', dataRoutes);
+app.use('/api/functions', functionsRoutes);
 
 // 404 handler for undefined routes
 app.use((req, res, next) => {
